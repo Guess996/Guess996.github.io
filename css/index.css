@@ -1,0 +1,219 @@
+ body{
+    width: 100%;
+    height: 100%;
+    display:grid;
+    grid-template-columns: 8fr;
+    grid-template-rows:60px 9fr ;
+    grid-template-areas:
+    "nav nav aside"
+    "section section aside"
+    "a a aside"
+    "b b aside"
+    ;
+    background-image: url('../images/4.jpg');
+    /* background-color: rgb(230, 109, 109); */
+    background-repeat: no-repeat;
+    /* background-size: cover; */
+    object-fit: cover;
+    /* object-position: 50% 50%; */
+    font-family:"微软雅黑"，"黑体"，"宋体", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    position: relative;
+}
+
+body::-webkit-scrollbar {
+
+    width: 10px;     /*高宽分别对应横竖滚动条的尺寸*/
+
+    height: 1px;
+
+}
+
+body::-webkit-scrollbar-thumb {/* 滚动条里面小方块 */
+    /* border-radius: 10px; */
+     /* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
+    background: #00cce7;
+}
+
+body::-webkit-scrollbar-track {/* 滚动条里面轨道 */
+    background-color: rgb(255, 255, 255);
+    /* -webkit-box-shadow: inset 0 0 5px rgba(0,0,0,0.2); */
+    /* border-radius: 10px; */
+}
+
+nav{
+    /* flex: 1; */
+    width: 100%;
+    min-width: 350px;
+    height:60px;
+    grid-area: nav;
+    backdrop-filter: blur(15px);
+    background-color: rgba(255, 255, 255,.1);
+    display: flex;
+    justify-content: flex-end;
+    /* box-shadow: 0 0 5px rgba(255, 255, 255, 1); */
+    position: sticky;
+    top: 0;
+    z-index: 99;
+}
+nav>div{
+    display: inline-block;
+    user-select: none;
+    width: 40px;
+    height: 100%;
+    text-align: center;
+    line-height: 60px;
+    /* position: relative; */
+    /* top: 0;
+    right: 0; */
+    color: #fff;
+    transition: all .2s ;
+}
+nav>div:hover{
+    background-color: rgba(255, 255, 255,.5);
+}
+.navbar{
+    /* text-decoration: none; */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.navbar li{
+    display: inline-block;
+    width: 100px;
+    height: 100%;
+    /* background-color: #fff; */
+    line-height:60px;
+    text-align: center;
+    transition: all .2s;
+    color: #fff;
+    /* border-bottom: 1px solid #fff; */
+    /* margin: 0 20px; */
+    position: relative;
+    cursor: pointer;
+}
+.navbar li::before{
+    content: "";
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: all .2s;
+}
+.navbar li:hover::before{
+    /* background-color: #fff; */
+    /* border: 1px solid #fff; */
+    /* color: #000; */
+    /* border-radius:10px; */
+    left: 0;
+    width: 100%;
+    transition-delay: 0.1s;
+    z-index: -1;
+}
+li:hover ~ li::before{
+    left:0;
+}
+aside{
+    grid-area: aside;
+    width: 0px;
+    height: 100vh;
+    backdrop-filter: blur(8px);
+    background-color: rgba(255, 255, 255,0.5);
+    position:sticky;
+    top: 0;
+    /* right: 0; */
+    overflow: hidden;
+    transition: all .3s;
+    z-index: 2;
+}
+aside h2{
+    color: #f1f1f1;
+    text-align: center;
+    padding-bottom: 20px;
+}
+aside a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color:#fff;
+    transition: all .3s;
+}
+aside a:hover{
+    color: #29B6F6;
+}
+
+aside .netx_but{
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    position:absolute; 
+    left: calc(50% - 25px);
+    bottom: 25px;
+    border-radius:50%;
+    font-size: 3.3rem;
+    line-height: 40px;
+    /* background-color:rgba(255, 255, 255,0.5); */
+    cursor: pointer;
+    /* box-shadow: 0 0 2px #000; */
+    transition: all .3s;
+}
+.netx_but:hover{
+    color: #29B6F6;
+}
+
+#times{
+    grid-area: section; 
+    width: 100%;
+    height: 800px;
+    /* background-color: rgba(255, 255, 255,.5); */
+    z-index: -1;
+}
+
+
+
+#lbt{
+   grid-area: a;
+    width: 100%;
+    height: 700px;
+}
+#lbt>ul{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    /* transform: translateX(-10px); */
+    height: 100%;
+
+    /* position: relative; */
+}
+#lbt>ul>li{
+    padding: 0;
+    margin: 0;
+    width:100%;
+    height: 100%;
+
+    overflow: hidden;
+    position: absolute;
+    /* object-fit:fill; */
+    /* background-color: #00cce7; */
+}
+#lbt>ul>li>img{
+    width: 100%;
+    /* height: 600px; */
+    object-fit:fill;
+
+}
+
+
+
+
+footer{
+    grid-area: b;
+    width: 100%;
+    height: 600px;
+    background-color: antiquewhite;
+}
