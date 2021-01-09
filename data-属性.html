@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>test</title>
+    <!-- <link rel="stylesheet" href="./sss.css"> -->
+    <style>
+        body{
+    width: 100%;
+    height: 100vh;
+    display:grid;
+    grid-template-columns: 8fr;
+    grid-template-rows:40px 9fr ;
+    grid-template-areas:
+    "nav nav aside"
+    "section section aside"
+    "section section aside"
+    ;
+    background-image: url('https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fb.hiphotos.baidu.com%2Fzhidao%2Fpic%2Fitem%2F7aec54e736d12f2e08524bdf4ec2d5628535683e.jpg&thumburl=https%3A%2F%2Fss2.bdstatic.com%2F70cFvnSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D2229258317%2C1629892341%26fm%3D26%26gp%3D0.jpg');
+    /* background-color: rgb(18, 132, 231); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* object-fit: fill; */
+    font-family:"微软雅黑"，"黑体"，"宋体", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    
+}
+nav{
+    /* flex: 1; */
+    width: 100%;
+    min-width: 300px;
+    height:40px;
+    grid-area: nav;
+    /* background-color: rgb(179, 238, 164); */
+    display: flex;
+    justify-content: flex-end;
+}
+nav>div{
+    display: inline-block;
+    user-select: none;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    /* position: relative; */
+    /* top: 0;
+    right: 0; */
+    transition: all .2s ;
+}
+nav>div:hover{
+    background-color: #fff;
+}
+.navbar{
+    /* text-decoration: none; */
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    
+}
+.navbar li{
+    display: inline-block;
+    width: 100px;
+    height: 40px;
+    /* background-color: #fff; */
+    line-height: 40px;
+    text-align: center;
+    transition: all .2s;
+    color: #fff;
+    /* border-bottom: 1px solid #fff; */
+    /* margin: 0 20px; */
+    position: relative;
+    cursor: pointer;
+}
+.navbar li::before{
+    content: "";
+    position: absolute;
+    left: 100%;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #000;
+    transition: all .2s;
+}
+.navbar li:hover::before{
+    /* background-color: #fff; */
+    /* border: 1px solid #fff; */
+    /* color: #000; */
+    /* border-radius:10px; */
+    left: 0;
+    width: 100%;
+    transition-delay: 0.1s;
+    z-index: -1;
+}
+li:hover ~ li::before{
+    left:0;
+}
+.mover{
+    /* flex: 2; */
+    width: 100%;
+    height:100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    grid-area: section;
+}
+.mover img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* transform: translate(50px,50px); */
+}
+.mover img:nth-child(1){
+    top:15%;
+    left:50%;
+}
+.mover img:nth-child(2){ 
+    top: 30%;
+    left:10%;
+   
+}
+.mover img:nth-child(3){
+    top: 80%;
+    left:60%;
+}
+.mover img:nth-child(4){
+    top: 60%;
+    left:85%;
+}  
+.mover img:nth-child(5){  
+    top: 60%;
+    left:34%;
+}
+.mover img:nth-child(6){  
+    top: 45%;
+    left:55%;
+}
+.mover img:nth-child(7){  
+    top: 15%;
+    left:25%;
+}
+.mover img:nth-child(8){  
+    top: 72%;
+    left:7%;
+}
+.mover h2{
+    margin: 0;
+    font-size: 10em;
+    user-select: none;
+}
+aside{
+    grid-area: aside;
+    width: 0px;
+    height: 100%;
+    background-color: rgb(0, 0, 0);
+    position: relative;
+    overflow: hidden;
+    transition: all .3s;
+    z-index: 2;
+}
+aside h2{
+    color: #f1f1f1;
+    text-align: center;
+    padding-bottom: 20px;
+}
+aside a{
+    text-decoration: none;
+    display: inline-block;
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    color:#818181;
+    transition: all .3s;
+}
+aside a:hover{
+    color: #f1f1f1;
+}
+aside .netx_but{
+    padding: 0;
+    width: 40px;
+    height: 40px;
+    position:absolute; 
+    left: calc(50% - 25px);
+    bottom: 25px;
+    border-radius:50%;
+    color: #fff;
+    font-size: 40px;
+    line-height: 40px;
+    background-color: #818181;
+    cursor: pointer;
+}
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="navbar">
+            <li>首页</li>
+            <li>首页</li>
+            <li>登录</li>
+        </ul>
+        <div onclick="showaside()">
+            &#9776;
+        </div>
+    </nav>
+    <aside class="asides">
+        <h2>Hello</h2>
+            <a href="javasrcipt:;">about</a>
+            <a href="javasrcipt:;">about</a>
+            <a href="javasrcipt:;">about</a>
+            <a href="javasrcipt:;">about</a>
+            <a class="netx_but" onclick="showaside()">&times;</a>   
+    </aside>
+    <section class="mover">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fku.90sjimg.com%2Felement_pic%2F17%2F09%2F05%2F69a8db518f29134ec21da09f44017188.jpg&thumburl=https%3A%2F%2Fss1.bdstatic.com%2F70cFuXSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D2458091432%2C3914145997%26fm%3D26%26gp%3D0.jpg" data-speed="-5" alt="" class="imgpage">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Ffile.yuansuxi.com%2Fsyl%2F1501833203275_650x599.jpg&thumburl=https%3A%2F%2Fss2.bdstatic.com%2F70cFvnSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D3508236131%2C2890543645%26fm%3D26%26gp%3D0.jpg" data-speed="6" alt="" class="imgpage">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F18%2F01%2F31%2F649040da3eb40de470f96b23bfc5dbb7.jpg&thumburl=https%3A%2F%2Fss0.bdstatic.com%2F70cFuHSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D2174114105%2C2803518993%26fm%3D26%26gp%3D0.jpg" data-speed="-2" alt="" class="imgpage">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fpic03.scbao.com%2F200612%2F1082153-200612114S09-lp.jpg&thumburl=https%3A%2F%2Fss1.bdstatic.com%2F70cFvXSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D1885685458%2C1876173249%26fm%3D11%26gp%3D0.jpg" data-speed="1" alt="" class="imgpage">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F12%2F14%2Fc3876b42f69b5b957fee3e98f9ef7484.jpg&thumburl=https%3A%2F%2Fss0.bdstatic.com%2F70cFvHSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D2651512072%2C1648834236%26fm%3D26%26gp%3D0.jpg" data-speed="5" alt="" class="imgpage">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fbpic.588ku.com%2Felement_origin_min_pic%2F17%2F09%2F25%2F9c41374786a7948026906f298bebbac1.jpg&thumburl=https%3A%2F%2Fss1.bdstatic.com%2F70cFuXSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D973008932%2C2784632991%26fm%3D26%26gp%3D0.jpg" data-speed="-8" alt="" class="imgpage">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fwww.sunny2008.cn%2Fimg.php%3Fku.90sjimg.com%2Felement_origin_min_pic%2F18%2F01%2F14%2F754d80492a420d1535474909caec0470.jpg%2521%2Ffwfh%2F804x902%2Fquality%2F90%2Funsharp%2Ftrue%2Fcompress%2Ftrue&thumburl=https%3A%2F%2Fss3.bdstatic.com%2F70cFv8Sh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D1616364791%2C3124112954%26fm%3D26%26gp%3D0.jpg" data-speed="5" alt="" class="imgpage">
+        <img src="https://image.baidu.com/search/down?tn=download&ipn=dwnl&word=download&ie=utf8&fr=result&url=http%3A%2F%2Fku.90sjimg.com%2Felement_origin_min_pic%2F17%2F09%2F25%2Fb754ccd4963a2de4e9155a8ad014f5b3.jpg&thumburl=https%3A%2F%2Fss0.bdstatic.com%2F70cFuHSh_Q1YnxGkpoWK1HF6hhy%2Fit%2Fu%3D1072477671%2C2363510467%26fm%3D26%26gp%3D0.jpg" data-speed="-6" alt="" class="imgpage">
+
+        <!-- <h2>Hello</h2> -->
+    </section>
+    
+    <script>
+        document.querySelector('.mover').addEventListener("mousemove",pianyi);
+        function pianyi(e){
+            // console.log(e); 
+            this.querySelectorAll('.imgpage').forEach(imgpage => {
+                console.log(imgpage);
+                const speed= imgpage.getAttribute('data-speed')
+                // console.log(imgpage)
+                const x=(window.innerWidth - e.pageX*speed)/100
+                const y=(window.innerHeight - e.pageY*speed)/100
+                // console.log(this);
+                imgpage.style.transform=`translateX(${x}px) translateY(${y}px)`
+            //    console.log(this.querySelectorAll('.imgpage'));
+            });
+            
+        }
+
+        let show1=true
+        function showaside(){
+            if(show1){
+                document.querySelector(".asides").style.width="250px"
+                show1=false
+            }else if(show1==false){
+                document.querySelector(".asides").style.width="0"
+                show1=!false
+            }
+        }
+            
+    </script>
+</body>
+</html>
