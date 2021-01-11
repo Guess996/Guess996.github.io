@@ -22,39 +22,84 @@ window.onload=()=>{
     lbt_li[0].style.opacity="1"
     let index=0
     let times=null
-    for(let i=0;i<lbt_li.length;i++){
-        console.log(i);
+    let time1=null
+    // for(let i=0;i<lbt_li.length;i++){
+    //     console.log(i);
+    //     lbt_but[i].onclick=()=>{
+    //         index=i
+    //         for(let j=0;j<lbt_li.length;j++){
+    //             lbt_but[j].style.backgroundColor="rgba(255, 255, 255,.5)"
+    //             lbt_li[j].style.opacity="0"
+    //         }
+    //         lbt_but[i].style.backgroundColor="#29B6F6"
+    //         lbt_li[i].style.opacity="1"
+    //     }  
+    // }
+    // times=setInterval(function(){
+    //     index++
+    //     if(index>3){
+    //         index=0
+    //     }
+    //     for(let j=0;j<lbt_li.length;j++){
+    //         lbt_but[j].style.backgroundColor="rgba(255, 255, 255,.5)"
+    //         lbt_li[j].style.opacity="0"
+    //     }
+    //     lbt_but[index].style.backgroundColor="#29B6F6"
+    //     lbt_li[index].style.opacity="1"
+        
+    // },10000)
+    // let lbt_but=document.querySelectorAll('.lbt_but>button')
+    // console.log(lbt_but);
+    // console.log(lbt_li[0]);
+    for(let i= 0;i < lbt_li.length;i++){
         lbt_but[i].onclick=()=>{
             index=i
-            for(let j=0;j<lbt_li.length;j++){
-                lbt_but[j].style.backgroundColor="rgba(255, 255, 255,.5)"
-                lbt_li[j].style.opacity="0"
-            }
-            lbt_but[i].style.backgroundColor="#29B6F6"
-            lbt_li[i].style.opacity="1"
-        }  
+            clickb()
+        }      
     }
-    times=setInterval(function(){
-        index++
-        if(index>3){
-            index=0
-        }
-        for(let j=0;j<lbt_li.length;j++){
+    function clickb(){
+        for(let j =0 ; j < lbt_li.length;j++){
             lbt_but[j].style.backgroundColor="rgba(255, 255, 255,.5)"
             lbt_li[j].style.opacity="0"
         }
         lbt_but[index].style.backgroundColor="#29B6F6"
         lbt_li[index].style.opacity="1"
-        
-    },10000)
-    // let lbt_but=document.querySelectorAll('.lbt_but>button')
-    // console.log(lbt_but);
-    // console.log(lbt_li[0]);
-    // document.querySelectorAll('.lbt_but>button').forEach((item,index)=>{
-    //     item.onclick=()=>{
-    //         // console.log(lbt_li[index]);
-    //         item.classList.toggle('togglebut')
-    //         lbt_li[index].classList.toggle('toggleli')
-    //     }
-    // })
+    }
+    times=setInterval(function(){
+            index++
+            if(index>3){
+                index=0
+            }
+            clickb()
+        },10000)
+
+    let timsss=document.querySelector('.hms').children
+    time1=setInterval(()=>{
+        const days=new Date()
+        timsss[0].innerHTML= days.getHours().toString().padStart(2,'0')+":"
+        timsss[1].innerHTML= days.getMinutes().toString().padStart(2,'0')+":"
+        timsss[2].innerHTML= days.getSeconds().toString().padStart(2,'0')
+        document.querySelector('.ymd').innerHTML=days.toLocaleDateString()
+        document.querySelector('.xq').innerHTML="星期"+days.getDay()
+    },100)
+    
+    // document.querySelector('.hms').innerHTML=days.toLocaleTimeString()
+    //     document.querySelector('.ymd').innerHTML=days.toLocaleDateString()
+    //     document.querySelector('.xq').innerHTML="星期"+days.getDay()
+    // console.log(days.toLocaleDateString(),days.toLocaleTimeString());
+// 获取当前日期时间
+// var myDate = new Date();
+// myDate.toLocaleDateString();                //获取当前日期
+// var mytime=myDate.toLocaleTimeString();     //获取当前时间
+// myDate.toLocaleString( );                   //获取日期与时间
+// myDate.getYear();                //获取当前年份(2位)
+// myDate.getFullYear();            //获取完整的年份(4位,1970-????)
+// myDate.getMonth();               //获取当前月份(0-11,0代表1月)
+// myDate.getDate();                //获取当前日(1-31)
+// myDate.getDay();                 //获取当前星期X(0-6,0代表星期天)
+// myDate.getTime();                //获取当前时间(从1970.1.1开始的毫秒数)
+// myDate.getHours();               //获取当前小时数(0-23)
+// myDate.getMinutes();             //获取当前分钟数(0-59)
+// myDate.getSeconds();             //获取当前秒数(0-59)
+// myDate.getMilliseconds();        //获取当前毫秒数(0-999)
 }
