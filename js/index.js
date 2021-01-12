@@ -81,8 +81,18 @@ window.onload=()=>{
         timsss[2].innerHTML= days.getSeconds().toString().padStart(2,'0')
         document.querySelector('.ymd').innerHTML=days.toLocaleDateString()
         document.querySelector('.xq').innerHTML="星期"+days.getDay()
-    },100)
-    
+    },900)
+       const wtf=document.querySelector('input[type="search"]') 
+    document.querySelector('.souss').onclick=()=>{
+        //window.location.assign("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&ch=&tn=baidu&bar=&wd="++"&fenlei=256&oq=&rsv_pq=d7bc3b9c000066c5&rsv_t=bbf75sy%2F%2BdaG7oyR9XQSOqb9tenrNZBTUe1FrkfY%2Futf7zWy0xH9eMOa9IE&rqlang=cn&rsv_enter=0&rsv_btype=i&rsv_dl=ib&inputT=2304")
+        if(wtf.value==""){
+            alert('芜湖')
+        }else{
+            window.location.assign("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&ch=&tn=baidu&bar=&wd="+wtf.value+"&fenlei=256&oq=&rsv_pq=d7bc3b9c000066c5&rsv_t=bbf75sy%2F%2BdaG7oyR9XQSOqb9tenrNZBTUe1FrkfY%2Futf7zWy0xH9eMOa9IE&rqlang=cn&rsv_enter=0&rsv_btype=i&rsv_dl=ib&inputT=2304")
+        }
+        // console.log(wtf.value);
+    }
+    //++
     // document.querySelector('.hms').innerHTML=days.toLocaleTimeString()
     //     document.querySelector('.ymd').innerHTML=days.toLocaleDateString()
     //     document.querySelector('.xq').innerHTML="星期"+days.getDay()
@@ -102,4 +112,5 @@ window.onload=()=>{
 // myDate.getMinutes();             //获取当前分钟数(0-59)
 // myDate.getSeconds();             //获取当前秒数(0-59)
 // myDate.getMilliseconds();        //获取当前毫秒数(0-999)
+
 }
