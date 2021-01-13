@@ -59,7 +59,7 @@ window.onload=()=>{
     }
     function clickb(){
         for(let j =0 ; j < lbt_li.length;j++){
-            lbt_but[j].style.backgroundColor="rgba(255, 255, 255,.5)"
+            lbt_but[j].style.backgroundColor="#b71c1c"
             lbt_li[j].style.opacity="0"
         }
         lbt_but[index].style.backgroundColor="#29B6F6"
@@ -81,7 +81,7 @@ window.onload=()=>{
         timsss[2].innerHTML= days.getSeconds().toString().padStart(2,'0')
         document.querySelector('.ymd').innerHTML=days.toLocaleDateString()
         document.querySelector('.xq').innerHTML="星期"+days.getDay()
-    },900)
+    },1000)
        const wtf=document.querySelector('input[type="search"]') 
     document.querySelector('.souss').onclick=()=>{
         //window.location.assign("https://www.baidu.com/s?ie=utf-8&f=8&rsv_bp=1&rsv_idx=1&ch=&tn=baidu&bar=&wd="++"&fenlei=256&oq=&rsv_pq=d7bc3b9c000066c5&rsv_t=bbf75sy%2F%2BdaG7oyR9XQSOqb9tenrNZBTUe1FrkfY%2Futf7zWy0xH9eMOa9IE&rqlang=cn&rsv_enter=0&rsv_btype=i&rsv_dl=ib&inputT=2304")

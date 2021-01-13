@@ -15,7 +15,8 @@
     /* background-color: rgb(230, 109, 109); */
     background-repeat: no-repeat;
     /* background-size: cover; */
-    object-fit: fill;
+    object-fit: cover;
+    /* object-fit: fill; */
     /* object-position: 50% 50%; */
     font-family:"微软雅黑"，"黑体"，"宋体", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 0;
@@ -269,8 +270,6 @@ aside .netx_but{
     height: 900px;
     min-width: 400px;
     position: relative;
-    backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255,.5);
 }
 #lbt>ul{
     margin: 0;
@@ -300,18 +299,6 @@ aside .netx_but{
     height: 100%;
     object-fit:cover; 
 }
-#lbt>ul>li:nth-child(1){
-    z-index: 5;
-}
-#lbt>ul>li:nth-child(2){
-    z-index: 4;
-}
-#lbt>ul>li:nth-child(3){
-    z-index: 3;
-}
-#lbt>ul>li:nth-child(4){
-    z-index: 2;
-}
 .lbt_but{
     display: flex;
     justify-content: center;
@@ -328,7 +315,7 @@ aside .netx_but{
     width: 25px;
     height: 25px;
     transition: all .5s;
-    background-color: rgba(255, 255, 255,.5);
+    background-color: #b71c1c;
     /* background-color:red; */
     backdrop-filter: blur(10px);
     border: none;
@@ -410,6 +397,17 @@ footer{
     min-width: 400px;
     background-color: rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+footer>audio{
+    /* position: absolute; */
+    width: 400px;
+    height: 40px;
+    opacity: .8;
+    outline: none;
 }
 @media(max-width:1400px){
     #text{
