@@ -21,8 +21,6 @@ window.onload=()=>{
         cc[i].style.animationDelay=`${i * 0.05}s`
     }
 
-
-
     let lbt_li=document.querySelectorAll('.lbt_ul>li')
     let lbt_but=document.querySelectorAll('.lbt_but>button')
     lbt_but[0].style.backgroundColor="#29B6F6"
